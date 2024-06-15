@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+
+    <title>Construction</title>
+    <style>
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            float: left;
+        }
+
+        .tablink {
+            color: black;
+            float: left;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 10px;
+            width: 32%;
+            height: 50%;
+            border-style: ridge;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid;
+            border-top: none;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding-top: 1%;
+            padding-left: 1%;
+        }
+
+        .column {
+            float: left;
+            width: 35%;
+            padding: 10px;
+        }
+
+        .row ::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .btn-container {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .btn-box {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 10px;
+            font-size: 10px;
+            cursor: pointer;
+            border: ridge;
+            border-radius: 5px;
+            margin: 0 10px;
+            
+        }
+
+        .btn-box button {
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            margin-right: 50px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+            .btn-box button:hover {
+                color: #ff7846;
+            }
+
+        .content {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+
+        .active-content {
+            display: block;
+        }
+
+        .container {
+            height: 200px;
+            position: relative;
+        }
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 200%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            float: left;
+            padding-right:20px;
+        }
+
+        .brd {
+            width: 1000px;
+            height: 950px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            margin:auto;
+        }
+        
+    </style>
+</head>
+<body style="background-color: #E8E3E3;">
+    <div class="btn-container" >
+        <button class="btn" style="background-color: #000000; color: #FFFFFF; "><i class="fa fa-search"></i>Searching documents</button>
+        <button class="btn" style="background-color: #000000; color: #FFFFFF;">
+            <i class="fa fa-sort" style="padding-left:15px; padding-right:15px;"></i>
+            Sort by
+            <i class=" fa fa-chevron-down"></i>
+        </button>
+        <i class="fa fa-list" style="font-size:10px; ">List</i>
+        <button class="btn" style="background-color: #000000; color: #FFFFFF; padding-right:35px; padding-left:35px;"><i class="fa fa-th"></i>Grid</button>
+        <button class="btn" style="background-color: #000000; color: #FFFFFF;">Create Account<i class="fa fa-chevron-down"></i></button>
+        
+    </div>
+
+    
+    <div class="tag" style="text-align: center; padding-right: 100px;">
+        <div class="brd" style="text-align:center; ">
+            <div class="btn-box" style="text-align:center;padding-left:100px;">
+                <button id="btn1" style="background-color: #ACA2A2; border-radius: 8px; border: none;" onclick="openContent('content1')">Documents (120)</button>
+                <button id="btn2" style="background-color: #ACA2A2; border-radius: 8px; border: none;" onclick="openContent('content2')">Projects (21)</button>
+                <button id="btn3" style="background-color: #ACA2A2; border-radius: 8px; border:none;" onclick="openContent('content3')">Photos (200)</button>
+                <button id="btn4" style="background-color: #ACA2A2; border-radius: 8px; border:none;" onclick="openContent('content4')">Files (30)</button>
+            </div>
+
+            <div id="content1" class="content active-content" style="padding-left:200px;">
+                <div class=" tablink">
+                    <h6 style="font-size:small;">Brown's Bathroom Remodel'</h6>
+                    <input type="button" value=" Accepted" style="background-color: #D4F1C7; color: #63BD7B;">
+                    <div class="row">
+                        <div class="column">
+                            <p>Balance Due</p>
+                            <h6 style="font-size:small;">$12,099</h6>
+                        </div>
+                        <div class="column">
+                            <p>value</p>
+                            <h6 style="font-size:small;">$18,099</h6>
+                        </div>
+                    </div>
+                    <p>Documents</p>
+                    <h6 style="font-size:small;">Change Order #001008</h6>
+                    <div class=" row">
+                        <div class="column">
+                            <p>sent date</p>
+                            <h6 style="font-size:small;">08/08/2022</h6>
+                        </div>
+                        <div class=" column">
+                            <p>Due date</p>
+                            <h6 style="font-size:small;">09/08/2022</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" tablink">
+                    <h6 style="font-size:small;">Faruk's Bathroom Remodel</h6>
+                    <input type="button" value=" Pending" style="background-color: #F6CABC; color: #C36344; ">
+                    <div class="row">
+                        <div class="column">
+                            <p>Balance Due</p>
+                            <h6 style="font-size:small;">$12,099</h6>
+                        </div>
+                        <div class="column">
+                            <p>value</p>
+                            <h6 style="font-size:small;">$18,099</h6>
+                        </div>
+                    </div>
+                    <p>Documents</p>
+                    <h6 style="font-size:small;">Change Order #001008</h6>
+                    <div class=" row">
+                        <div class="column">
+                            <p>sent date</p>
+                            <h6 style="font-size:small;">08/08/2022</h6>
+                        </div>
+                        <div class=" column">
+                            <p>Due date</p>
+                            <h6 style="font-size:small;">09/08/2022</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" tablink">
+                    <h6 style="font-size:small;">Selim's Washroom Rework</h6>
+                    <input type="button" value=" Pending" style="background-color: #F6CABC; color: #C36344; ">
+                    <div class="row">
+                        <div class="column">
+                            <p>Balance Due</p>
+                            <h6 style="font-size:small;">$12,099</h6>
+                        </div>
+                        <div class="column">
+                            <p>value</p>
+                            <h6 style="font-size:small;">$18,099</h6>
+                        </div>
+                    </div>
+                    <p>Documents</p>
+                    <h6 style="font-size:small;">Estimate #001008</h6>
+                    <div class=" row">
+                        <div class="column">
+                            <p>sent date</p>
+                            <h6 style="font-size:small;">08/08/2022</h6>
+                        </div>
+                        <div class=" column">
+                            <p>Due date</p>
+                            <h6 style="font-size:small;">09/08/2022</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <div class=" tablink">
+                    <h6 style="font-size:small;">Yeasin's Bathroom Rework</h6>
+                    <input type="button" value=" Overdue" style="background-color: #F6CABC; color: #C36344; ">
+                    <div class="row">
+                        <div class="column">
+                            <p>Balance Due</p>
+                            <h6 style="font-size:small;">$12,099</h6>
+                        </div>
+                        <div class="column">
+                            <p>value</p>
+                            <h6 style="font-size:small;">$18,099</h6>
+                        </div>
+                    </div>
+                    <p>Documents</p>
+                    <h6 style="font-size:small;">Invoice #001008</h6>
+                    <div class=" row">
+                        <div class="column">
+                            <p>sent date</p>
+                            <h6 style="font-size:small;">08/08/2022</h6>
+                        </div>
+                        <div class=" column">
+                            <p>Due date</p>
+                            <h6 style="font-size:small;">09/08/2022</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" tablink">
+                    <h6 style="font-size:small;">Nijium's Bedroom Rework</h6>
+                    <input type="button" value=" Accepted" style="background-color: #D4F1C7; color: #63BD7B;">
+                    <div class="row">
+                        <div class="column">
+                            <p>Balance Due</p>
+                            <h6 style="font-size:small;">$12,099</h6>
+                        </div>
+                        <div class="column">
+                            <p>value</p>
+                            <h6 style="font-size:small;">$18,099</h6>
+                        </div>
+                    </div>
+                    <p>Documents</p>
+                    <h6 style="font-size:small;">Estimate #001008</h6>
+                    <div class=" row">
+                        <div class="column">
+                            <p>sent date</p>
+                            <h6 style="font-size:small;">08/08/2022</h6>
+                        </div>
+                        <div class=" column">
+                            <p>Due date</p>
+                            <h6 style="font-size:small;">09/08/2022</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" tablink">
+                    <h6 style="font-size:small;">Jamal's Bathroom Cleanup</h6>
+                    <input type="button" value=" Overdue" style="background-color: #F6CABC; color: #C36344;">
+                    <div class="row">
+                        <div class="column">
+                            <p>Balance Due</p>
+                            <h6 style="font-size:small;">$12,099</h6>
+                        </div>
+                        <div class="column">
+                            <p>value</p>
+                            <h6 style="font-size:small;">$18,099</h6>
+                        </div>
+                    </div>
+                    <p>Documents</p>
+                    <h6 style="font-size:small;">Invoice #001008</h6>
+                    <div class=" row">
+                        <div class="column">
+                            <p>sent date</p>
+                            <h6 style="font-size:small;">08/08/2022</h6>
+                        </div>
+                        <div class=" column">
+                            <p>Due date</p>
+                            <h6 style="font-size:small;">09/08/2022</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content2" class="content">
+                <h4 style=" font-family:Pristina; font-size:50px;">Projects</h4>
+                <img src="images\project.jpeg" alt="Projects" width="200px" height="200px">
+                <p style="font-family:'Book Antiqua';">
+                    Project work is work which focuses on completing a task.
+                    Project work normally involves a lot of resources - time, people and materials - and learners practise a range of skills
+                    and language systems. Example. A group of teenage learners work on a project to develop a series of posters on how to
+                    protect the environment.
+                </p>
+            </div>
+
+            <div id="content3" class="content">
+                <h4 style=" font-family:Pristina; font-size:50px;">Photos</h4>
+                <img src="images\phots.jpeg" alt="Projects" width="200px" height="200px">
+                <p style="font-family:'Book Antiqua';">
+                    A photograph (also known as a photo, image, or picture) is an image created by light falling on a photosensitive surface,
+                    usually photographic film or an electronic image sensor, such as a CCD or a CMOS chip.
+                    Most photographs are now created using a smartphone or camera, which uses a lens to focus the scene's visible wavelengths of light
+                    into a reproduction of what the human eye would see.
+                    The process and practice of creating such images is called photography.
+                </p>
+            </div>
+
+            <div id="content4" class="content">
+                <h4 style=" font-family:Pristina; font-size:50px;">Files</h4>
+                <img src="images\files.jpeg" alt="Projects" width="200px" height="200px">
+                <p style="font-family:'Book Antiqua';">
+                    A file is a container in a computer system for storing information.
+                    Files used in computers are similar in features to that of paper documents used in library and office files.
+                    There are different types of files such as text files, data files, directory files, binary and graphic files, and
+                    these different types of files store different types of information.
+                    In a computer operating system, files can be stored on optical drives, hard drives or other types of storage devices.
+                </p>
+
+            </div>
+
+            <div class="container">
+                <div class="center">
+                    <div class="btn-container" style="text-align: center;">
+                        <button style="background-color: #07BAB2;padding-left:30px; padding-right:30px;" class="btn" onclick="nextContent()">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openContent(contentId) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active-content');
+            }
+            document.getElementById(contentId).classList.add('active-content');
+        }
+
+        function nextContent() {
+            var currentContent = document.getElementsByClassName('active-content')[0];
+            var nextContentId = getNextContentId(currentContent.id);
+            if (nextContentId) {
+                openContent(nextContentId);
+            }
+        }
+
+        function getNextContentId(currentId) {
+            var contentIds = ['content1', 'content2', 'content3', 'content4'];
+            var currentIndex = contentIds.indexOf(currentId);
+            if (currentIndex !== -1 && currentIndex < contentIds.length - 1) {
+                return contentIds[currentIndex + 1];
+            }
+            return contentIds[0]; 
+        }
+    </script>
+</body>
+</html>
